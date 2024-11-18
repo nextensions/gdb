@@ -33,7 +33,13 @@
 
 ```
 ❯ npm run dev
+❯ sudo docker-compose build graphql
+❯ docker-compose up -d
 ```
+
+- Next.js: http://localhost:3000
+- GraphQL API: http://0.0.0.0:5433/graphql
+- GraphiQL GUI/IDE: http://0.0.0.0:5433/graphiql
 
 ---
 
