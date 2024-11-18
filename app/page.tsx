@@ -67,7 +67,7 @@ export default function Home() {
 
       <Card
         isBlurred
-        className="max-w-[610px] border-none bg-background/60 dark:bg-default-100/50"
+        className="max-w-[610px] border-none bg-background/60 bg-gradient-to-t from-violet-500 to-violet-200 dark:bg-default-100/50"
         shadow="sm"
       >
         <CardBody>
