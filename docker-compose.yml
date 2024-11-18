@@ -1,15 +1,45 @@
 services:
   db:
     image: postgres
-    container_name: postgres-gdb
+    container_name: gdb-postgres
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+    networks:
+      - gdb-network
     ports:
-      - "5433:5432"
+      - "5431:5432"
     volumes:
       - ../gdb-data:/var/lib/postgresql/data
+  graphql:
+    container_name: gdb-graphql
+    restart: always
+    image: gdb-graphql
+    build:
+      context: ./postgraphile
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    networks:
+      - gdb-network
+    ports:
+      - 5433:5433
+    command:
+      [
+        "--connection",
+        "${DATABASE_URL}",
+        "--port",
+        "5433",
+        "--schema",
+        "public",
+        "--enhance-graphiql",
+        "--append-plugins",
+        "postgraphile-plugin-connection-filter,custom-plugin",
+      ]
+networks:
+  gdb-network:
 volumes:
   pgdata:
