@@ -99,7 +99,7 @@ Ok to proceed? (y)
 
 ```
 "react": "18.3.1",
-"next": "14.2.4",
+"next": "14.2.10",
 "@nextui-org/system": "2.2.6",
 
 ```
