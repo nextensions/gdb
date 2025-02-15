@@ -63,11 +63,15 @@ export default function Home() {
         <Button color="primary" radius="full" variant="shadow">
           Shadow
         </Button>
+
+        <Button color="primary" radius="full" variant="shadow">
+          Pangpond
+        </Button>
       </div>
 
       <Card
         isBlurred
-        className="max-w-[610px] border-none bg-background/60 bg-gradient-to-t from-violet-500 to-violet-200 dark:bg-default-100/50"
+        className="max-w-[610px] border-none bg-background/60 bg-gradient-to-r from-violet-500 to-violet-200 dark:bg-default-100/50"
         shadow="sm"
       >
         <CardBody>
